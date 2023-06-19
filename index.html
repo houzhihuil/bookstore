@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="nav.css" />
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		
+		<script type ="text/javascript" src="jquery-3.6.1.min.js"></script> 
+		<script type="text/javascript"  src="script.js"></script>
+		<title>BrooketCo</title>
+	</head>
+	<body > <!-- onload="chargerZoneItem()" -->	
+		
+		<header id="entete">
+			
+			<h1>BrooketCo </h1>	
+		 
+			<div id="order" onclick="afficherOrder();"> 
+				Last order    
+			</div>
+
+			<div id="panier" onclick="afficheFacture();"> 
+				Nbre item : <span id="idItem">0</span> 
+			</div> 
+			<!-- chercherProduit -->			 	
+				<label for="chercherProduit" class="chercherProduit">Produit ID: </label> 
+				<input  id="chercherProduit" name="chercherProduit" placeholder="" onkeyup="chercherProduit()"/> 
+
+				<ul>
+					<li class="items" onclick="gohome()">
+						<span>Accueil</span>
+					</li>
+					<li class="items" onclick="promotion()">
+						<span>Promotion</span>
+					</li>
+					<li class="items" onclick="contact()">
+						<span>Contact</span>
+					</li>
+				</ul>
+		</header>
+ 
+		<nav id="nav">
+			<ul class="listeItems">
+				
+				<!--  -->
+				<li class="items"><span></span></li>
+				<li class="items">
+					<span class="livre" onclick="avertir(this)">informatique</span>
+				</li>
+				<li class="items">
+					<span class="livre" onclick="avertir(this)">littérature</span>
+				</li>
+				<li class="items">
+					<span class="livre" onclick="avertir(this)">géographie</span>
+				</li>
+
+				<li class="items"><span></span></li>
+				<li class="items">
+					<span  onclick="avertir(this)">action</span>
+				</li>
+				<li class="items">
+					<span  class="film" onclick="avertir(this)">comédie</span>
+				</li>
+				<li class="items">
+					<span  class="film" onclick="avertir(this)">drame</span>
+				</li>
+				<li class="items">
+					<span  class="film" onclick="avertir(this)">sciences Fictions</span>
+				</li>
+
+				<li class="items"><span></span></li>
+				<li class="items">
+					<span  onclick="avertir(this)">Playstation</span>
+				</li>
+				<li class="items">
+					<span  onclick="avertir(this)"> Nintendo Wii U</span>
+				</li>
+				<li class="items">
+					<span  onclick="avertir(this)">Xbox</span>
+				</li>               
+			</ul>
+		</nav>
+		<main>
+		<div id="zoneContenuItem" class="flex-container" >
+			<!-- render porducts here -->    
+		</div> 
+		<div id="zoneContenuOrder">
+			<!-- render Order here --> 
+			<h1 align="center">Bon de livraison:</h1>
+			
+			<table border="1" width="50%" align="center"> 
+				<thead>
+					<th>Description</th>
+					<th>Quantite</th>
+					<th>Prix unitaire</th>					
+				</thead>
+				<tbody id="corps2Tableau">
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>&nbsp;</th>
+						<th>Sous total</th>
+						<th id="id2SousTotal">XXX</th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th>TPS</th>
+						<th id="id2TPS">XXX</th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th>TVQ</th>
+						<th id="id2TVQ">XXX</th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th>Total</th>
+						<th id="id2Total">XXX</th>
+					</tr>
+				</tfoot>
+			</table>  
+		</div>
+		<div id="zoneContenuFacture">
+			<table border="1" width="50%" align="center">
+				<thead>
+					<th>Description</th>
+					<th>Quantite</th>
+					<th>Prix unitaire</th>					
+				</thead>
+				<tbody id="corpsTableau">
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>&nbsp;</th>
+						<th>Sous total</th>
+						<th id="idSousTotal">XXX</th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th>TPS</th>
+						<th id="idTPS">XXX</th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th>TVQ</th>
+						<th id="idTVQ">XXX</th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th>Total</th>
+						<th id="idTotal">XXX</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div id="zoneDetail" class="flex-container" >
+		    <div id="petiteEntete">
+				<span id="idFermerDialogue" onclick="fermerDialogue();">Fermer</span>
+			</div>
+			<img id="uneImage" />
+			<div > 
+				<strong>Description : </strong><span id="uneDescription">XXX</span> 
+			</div>
+			<div >
+				<strong>Prix : </strong><span id="unPrix">XXX</span> 
+			</div>
+			<div >
+				<strong>Detail : </strong><span id="unDetail">XXX</span> 
+			</div>
+			
+			<div>			
+				<strong>Qte : </strong></strong><input type="text" id="txtQuantite" value="1" />			 
+			</div>
+			<div id="unAjout">Ajouter</div>			
+		</div>
+		</main>
+		 
+		<div class="footer">
+			 
+				<!-- <a href="http://www.cgodin.qc.ca">
+					<img src="logoCGG.jpg" alt="logoCGG" />
+				</a> --> 
+			<div class="fItem">&copy; BrooketCo 2022</div>
+			<a href="location.htm" class="fItem">Location</a>
+			<a href="location.htm" class="fItem">Contact</a>
+			<a href="#" class="fItem">Haut</a>
+			 
+		</div>
+	</body>
+</html>

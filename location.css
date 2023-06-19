@@ -1,0 +1,28 @@
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+ 
+.container{
+    display: inline;
+     
+}
+
+#maCarte{
+    width: 70%;
+    height: 100%;
+    border: 1px solid;     
+}
+
+#carteInfo{
+    width: 30%;
+    height: 100%;
+    border: 1px solid;
+} 
+
+ul li{
+    list-style-type: none;
+}
